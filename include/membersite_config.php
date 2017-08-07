@@ -4,20 +4,25 @@ require_once("./include/fg_membersite.php");
 $fgmembersite = new FGMembersite();
 
 //Provide an addressable URL for your site here (try copying and pasting it into your web browser and it should take you to your site)
-$fgmembersite->SetWebsiteName('user11.com');
+$fgmembersite->SetWebsiteName('webdesignsbysarah.com/superior');
 
 //Provide the email address where you want to get notifications
-$fgmembersite->SetAdminEmail('user11@user11.com');
+$fgmembersite->SetAdminEmail('sarahalbright62@gmail.com');
 
 //Provide your database login details here:
 //hostname, user name, password, and database name
 //note that the script will create the table (locked as registeredUsers)
 //by itself on submitting register.php for the first time
-$fgmembersite->InitDB(/*hostname*/'p:localhost',
-                      /*username*/'prasanth',
-                      /*password*/'p',
-                      /*database name*/'testdb');
+$fgmembersite->InitDB(/*hostname*/'(local)',
+                      /*username*/'SarahAlbright\Sarah Albright',
+                      /*password*/'',
+                      /*database name*/'BrewPoint');
+					  //try new connecntion
+$serverName = "SARAHALBRIGHT\DEVELOPERSQL"; 
 
+// Windows Authentication
+
+ 
 //This is a compromise between entirely static values and randomly generated ones that the nature of PHP has a hard time with.
 $today = getdate();                      
 $fgmembersite->SetRandomKey(md5($today["year"].$today["yday"]));                      

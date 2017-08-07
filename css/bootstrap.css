@@ -9,8 +9,36 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+.cover-container {
+    width: 100%;
+	margin-right: auto;
+    margin-left: auto;
+
+}
+.site-wrapper-inner {
+	vertical-align: middle;
+	vertical-align: top;
+	padding-top: 107px;
+	padding-bottom: 107px;
+}
 body {
   margin: 0;
+background-image: url(../images/greenbg.jpg);
+  }
+  .logo {
+    background-color: #01683d;
+    border-top: #000 solid 10px;
+	border-bottom: #000 solid 1px;
+	height:150px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.footer {
+	background-image: url(../images/asphaltbg.png);
+	padding:25px;
+	height: 500px;
+	color:#fff;
 }
 article,
 aside,
@@ -1316,7 +1344,7 @@ mark,
   text-align: right;
 }
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 .text-justify {
   text-align: justify;
@@ -3202,9 +3230,9 @@ fieldset[disabled] .btn-primary.focus {
 .btn-success:active.focus,
 .btn-success.active.focus,
 .open > .dropdown-toggle.btn-success.focus {
-  color: #fff;
-  background-color: #398439;
-  border-color: #255625;
+	color: #fff;
+	background-color: #01683d;
+	border-color: 01683d;
 }
 .btn-success:active,
 .btn-success.active,
@@ -4589,8 +4617,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+	background-color: #01683d;
+	border-color: #080808;
+	background:url(../images/asphaltbg.png) repeat;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
@@ -4990,9 +5019,11 @@ a.badge:focus {
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
+	padding-right: 60px;
+	padding-left: 60px;
+	background-image: url(../images/SliderBG1.jpg);
   }
+
   .jumbotron h1,
   .jumbotron .h1 {
     font-size: 63px;
@@ -6581,6 +6612,16 @@ button.close {
   td.visible-xs {
     display: table-cell !important;
   }
+  .col-sm-4 {
+	  width:100%;
+  }
+  .col-xs-push-4 {
+    left: 0%;
+}
+.col-xs-pull-4 {
+    right: 0%;
+}
+
 }
 @media (max-width: 767px) {
   .visible-xs-block {
@@ -6598,6 +6639,15 @@ button.close {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+	  .col-sm-4 {
+	  width:60%;
+  }
+  .col-xs-push-4 {
+    left: 20%;
+}
+.col-xs-pull-4 {
+    right: 20%;
+}
   .visible-sm {
     display: block !important;
   }
