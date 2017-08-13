@@ -1,6 +1,31 @@
 <?php
 include("db.php");
 session_start();
+
+if(isset($_POST['deleter']))
+{
+	DeleteRealtor();
+}	
+function DeleteRealtor() 
+{
+	include("db.php");
+	$user_id = $_POST['user_id'];
+		// Create connection
+	$query = "DELETE FROM [BrewPoint].[dbo].[tblUsers] WHERE User_ID=?"; 
+		// Check connection
+
+	$stmt = sqlsrv_prepare($db, $query, array(&$user_id));
+	if( !$stmt ) {
+		die( print_r( sqlsrv_errors(), true) );
+	}
+		
+	if( !sqlsrv_execute( $stmt ) ) {
+		die( print_r( sqlsrv_errors(), true) );
+	}
+
+    return true;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en"><!-- InstanceBegin template="/Templates/mainpage.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -47,60 +72,38 @@ session_start();
   <!-- /.container-fluid --> 
 </nav>
 <!-- InstanceBeginEditable name="mainSection" -->
-<div class="container-fluid" style="background-image:url(images/SliderBG1.jpg);margin-top:-20px">
-<div class="row">
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-    </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home</a></li>
-        <li><a href="requestPhotos.php">Realtor</a></li>
-        <li><a href="photographerPage.php">Photographer</a></li>
-      </ul>
-    </div>
-    <!--/.nav-collapse --> 
-  </div>
-</nav>
+
 	</div></div>
 	
 	<div class="container">
 	
 	
 	<?php
-	//if($adminsite->CheckLogin())
-	//{
-	$servername = "localhost";
-	$username = "forty1";
-	$password = "Bxb65HcL!";
-	$dbname = "forty1";
 
-	// Create connection
-	//$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	//if ($conn->connect_error) {
-	//	die("Connection failed: " . $conn->connect_error);
-	//} 
 	
 	$query = "SELECT * FROM [BrewPoint].[dbo].[tblUsers]";
 	$result = sqlsrv_query($db, $query);
 	
-	echo "<hr><h2  style='margin-top:60px'>Members</h2><p><a href='registermember.php'>Register New Member</a></p>";
+	echo "<hr><h2  style='margin-top:60px'>Members</h2><p><a href='registeremployee.php'>Register New Member</a></p>";
 
 	if (sqlsrv_has_rows($result) > 0) {
 		// output data of each row
 		while($row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)) {
 
 			echo "
-			<div class='col-sm-12'>
-	        <div class='col-lg-3'style='font-size:13px'><strong>Username: </strong>" . $row["User_ID"]. " </div><div class='col-lg-3'style='font-size:13px'><strong>First Name: </strong>" . $row["FirstName"]. " </div><div class='col-lg-3'style='font-size:13px'><strong>Last Name: </strong>" . $row["LastName"]. " </div>";
+			<div class='col-lg-12'>
+	        <div class='col-lg-2'style='font-size:13px'><strong>Username: </strong>" . $row["User_ID"]. " </div><div class='col-lg-2'style='font-size:13px'><strong>First Name: </strong>" . $row["FirstName"]. " </div><div class='col-lg-2'style='font-size:13px'><strong>Last Name: </strong>" . $row["LastName"]. " </div>";
 			
-			echo "	<div class='col-lg-3'><form action='index.php' method='post'>
-			<input type='hidden' name='iduser' id='iduser' value=".$row["User_ID"]." />
+			echo "	<div class='col-lg-2'><form action='adminpage.php' method='post' onclick='return onDelete();'>
+			<input type='hidden' name='user_id' id='user_id' value=".$row["User_ID"]." />
 			<input type='hidden' name='deleter' id='deleter' value='1'/>
 			<button class='btn btn-primary' type='submit'>Delete</button>	
+			</form></div>";
+			
+			echo "	<div class='col-lg-2'><form action='modifyemployee.php' method='post'>
+			<input type='hidden' name='id' id='id' value=".$row["ID"]." />
+			<input type='hidden' name='modify' id='modify' value='1'/>
+			<button class='btn btn-primary' type='submit'>Modify</button>	
 			</form></div></div>";
 		}
 	} else {
@@ -128,4 +131,18 @@ session_start();
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script>
 </body>
+
+<script language="JavaScript">
+    function onDelete()
+    {
+        if(confirm('Are you sure you want to delete that record?')==true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+</script>
 <!-- InstanceEnd --></html>
