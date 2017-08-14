@@ -10,10 +10,7 @@ function stringHashing($password,$salt){
  return $hashedString;
 }
 
-
 $id = $_POST['id'];
-
-
 
 $query = "SELECT * FROM [BrewPoint].[dbo].[tblUsers] WHERE ID='{$id}'";
 
@@ -94,40 +91,28 @@ if( !sqlsrv_execute( $stmt ) ) {
 
 }
 
-
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- InstanceBegin template="/Templates/mainpage.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- TemplateBeginEditable name="doctitle" -->
+<!-- InstanceBeginEditable name="doctitle" -->
 <title>Modify Employee</title>
-<!-- TemplateEndEditable -->
+<!-- InstanceEndEditable -->
 <!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.css">
 
-    <!-- Custom styles for this template -->
-    <link href="css/styles.css"rel="stylesheet" type="text/css">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
-	
-	<link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
-    <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-<!-- TemplateBeginEditable name="head" -->
-<!-- TemplateEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
 </head>
 
 <body>
@@ -142,10 +127,7 @@ if( !sqlsrv_execute( $stmt ) ) {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-inverse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-                     <li class="active"><a href="index.php">Home</a></li>
-			<li><a href="registeremployee.php">Register Employee</a></li>
-			<li><a href="modifyemployee.php">Modify Employee</a></li>
-			<li><a href="logout.php">logout</a></li> 
+        
       </ul>
       <ul class="nav navbar-nav navbar-right">
       </ul>
@@ -154,8 +136,12 @@ if( !sqlsrv_execute( $stmt ) ) {
   </div>
   <!-- /.container-fluid --> 
 </nav>
-<div class="row" style="background-image:url(images/greenbg.png);margin-top:-20px"> 
-<div class="modal-content" style="margin-top:25px;margin-bottom:150px;">
+<!-- InstanceBeginEditable name="mainSection" -->
+
+<div class="container">
+  <div class="row mainbg">
+    <div class="text-center col-sm-12">
+    <div class="modal-content" style="margin-top:75px;margin-bottom:150px;">
     <div class="modal-header">
       <h2 class="modal-title" id="myModalLabel">Modify Employee Records</h2>
       <img src="images/photologo.png" alt=""></div>
@@ -278,56 +264,39 @@ if( !sqlsrv_execute( $stmt ) ) {
     </div>
 </div>
 
+
+
+
 <div class='modal-footer'> <a href='index.php'>
             <button type='button' class='btn btn-default'>Close</button>
             </a>
     <input type='submit' name='Submit' value='Submit' class='btn btn-primary'/>
 </div>
+<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 
 </fieldset>
 </form>
 </div>
 </div>
 </div>
-<!-- client-side Form Validations:
-Uses the excellent form validation script from JavaScript-coder.com
 
-<script type='text/javascript'>
-// <![CDATA[
-    var pwdwidget = new PasswordWidget('thepwddiv','password');
-    pwdwidget.MakePWDWidget();
-    
-    var frmvalidator  = new Validator("register");
-    frmvalidator.EnableOnPageErrorDisplay();
-    frmvalidator.EnableMsgsTogether();
-    //frmvalidator.addValidation("name","req","Please provide your name");
-
-    //frmvalidator.addValidation("email","req","Please provide your email address");
-
-    //frmvalidator.addValidation("email","email","Please provide a valid email address");
-	
-	//frmvalidator.addValidation("address","req","Please provide your Address");
-	
-	//frmvalidator.addValidation("dob","req","Please provide your Date of Birth");
-	
-	//frmvalidator.addValidation("phone","req","Please provide your Phone Number");
-	
-	//frmvalidator.addValidation("dlnumber","req","Please provide your Driver License Number");
-	
-	//frmvalidator.addValidation("confelon","req","Please answer the convicted felon question");
-	
-	//frmvalidator.addValidation("econtact","req","Please provide an emergency contact");
-
-    frmvalidator.addValidation("username","req","Please provide a username");
-    
-    frmvalidator.addValidation("password","req","Please provide a password");
-
-// ]]>
-</script> 
+</div>
+</div>
+</div>
+<hr>
+<!-- InstanceEndEditable -->
+<footer class="text-center footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © Superior Paving. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="js/jquery-1.11.3.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script>
-
 </body>
-</html>
+<!-- InstanceEnd --></html>

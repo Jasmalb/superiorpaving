@@ -47,6 +47,12 @@ function DeleteRealtor()
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <!-- InstanceBeginEditable name="head" -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css"rel="stylesheet" type="text/css">
 <!-- InstanceEndEditable -->
 </head>
 
@@ -73,7 +79,7 @@ function DeleteRealtor()
 </nav>
 <!-- InstanceBeginEditable name="mainSection" -->
 
-	</div></div>
+<!--<div class="row" style="background-image:url(images/greenbg.png);margin-top:-20px"> -->
 	
 	<div class="container">
 	
@@ -84,15 +90,16 @@ function DeleteRealtor()
 	$query = "SELECT * FROM [BrewPoint].[dbo].[tblUsers]";
 	$result = sqlsrv_query($db, $query);
 	
-	echo "<hr><h2  style='margin-top:60px'>Members</h2><p><a href='registeremployee.php'>Register New Member</a></p>";
+	echo "<hr><h2  style='margin-top:60px'>Employees</h2><p><a href='registeremployee.php'>Register New Employee</a></p>";
 
 	if (sqlsrv_has_rows($result) > 0) {
 		// output data of each row
 		while($row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)) {
 
 			echo "
+			<div class='row'>
 			<div class='col-lg-12'>
-	        <div class='col-lg-2'style='font-size:13px'><strong>Username: </strong>" . $row["User_ID"]. " </div><div class='col-lg-2'style='font-size:13px'><strong>First Name: </strong>" . $row["FirstName"]. " </div><div class='col-lg-2'style='font-size:13px'><strong>Last Name: </strong>" . $row["LastName"]. " </div>";
+	        <div class='col-lg-2'style='font-size:14px'><strong>Username: </strong>" . $row["User_ID"]. " </div><div class='col-lg-2'style='font-size:14px'><strong>First Name: </strong>" . $row["FirstName"]. " </div><div class='col-lg-2'style='font-size:14px'><strong>Last Name: </strong>" . $row["LastName"]. " </div>";
 			
 			echo "	<div class='col-lg-2'><form action='adminpage.php' method='post' onclick='return onDelete();'>
 			<input type='hidden' name='user_id' id='user_id' value=".$row["User_ID"]." />
@@ -104,7 +111,7 @@ function DeleteRealtor()
 			<input type='hidden' name='id' id='id' value=".$row["ID"]." />
 			<input type='hidden' name='modify' id='modify' value='1'/>
 			<button class='btn btn-primary' type='submit'>Modify</button>	
-			</form></div></div>";
+			</form></div></div></div><hr>";
 		}
 	} else {
 		echo "0 results";
@@ -113,9 +120,9 @@ function DeleteRealtor()
 
 
 ?>
+</div>
 
-
-</div></div>
+</div>
 <!-- InstanceEndEditable -->
 <footer class="text-center footer">
   <div class="container">

@@ -101,37 +101,35 @@ function stringHashing($password,$salt){
   </head>
 
   <body>
-
- <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php">Home</a></li>
-			<li><a href="requestPhotos.php">Realtor</a></li>
-			<li><a href="photographerPage.php">Photographer</a></li>
-            <li><a href="admin.php">Admin</a></li>
-			<li><a href="logout.php">logout</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-	
-	<h2>Register realtor</h2>
+   <div class="logo"><p align="center"><a href="#"><img src="images/superior-logo.png" width="250" height="118" alt="Superior Paving"></a></p></div>
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
     
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-inverse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+             <li class="active"><a href="index.php">Home</a></li>
+			<li><a href="registeremployee.php">Register Employee</a></li>
+			<li><a href="modifyemployee.php">Modify Employee</a></li>
+			<li><a href="logout.php">logout</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+
+<div class="row" style="background-image:url(images/greenbg.png);margin-top:-20px"> 	
     
-
-
 <div class="modal-content" style="margin-top:75px;margin-bottom:150px;">
     <div class="modal-header">
-      <h2 class="modal-title" id="myModalLabel">Realtor Login</h2>
+      <h2 class="modal-title" id="myModalLabel">Register Employee Login</h2>
       <img src="images/photologo.png" alt=""></div>
     <div class="modal-body">
 	<!-- Form Code Start -->
@@ -246,15 +244,11 @@ function stringHashing($password,$salt){
     </div>
 </div>
 
-
-
-
 <div class='modal-footer'> <a href='index.php'>
             <button type='button' class='btn btn-default'>Close</button>
             </a>
     <input type='submit' name='Submit' value='Submit' class='btn btn-primary'/>
 </div>
-<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 
 </fieldset>
 </form>
@@ -299,7 +293,10 @@ Uses the excellent form validation script from JavaScript-coder.com
 // ]]>
 </script> 
 -->
-
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
 
 </body>
 </html>

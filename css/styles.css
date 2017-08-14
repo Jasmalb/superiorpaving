@@ -1,0 +1,524 @@
+@charset "utf-8";
+/* CSS Document */
+
+.main-content {
+	width: 100%
+}
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0
+}
+.btn-wait {
+	color: #fff;
+	background-color: #223d99;
+	border-color: #0b1a4d;
+	border-radius: 16px;
+	font-size: 16px;
+	margin-top: -10px
+}
+.btn-wait a {
+	color: #fff
+}
+.modal-backdrop {
+	z-index: 1
+}
+.navbar-right {
+	padding-right: 30px
+}
+.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 20
+}
+.navbar-wrapper>.container {
+	padding-right: 0;
+	padding-left: 0
+}
+.navbar-wrapper .navbar {
+	padding-right: 15px;
+	padding-left: 15px
+}
+.navbar-wrapper .navbar .container {
+	width: auto
+}
+.navbar-inv {
+	background-color: transparent;
+	border-color: transparent
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: #e3e3e2
+}
+.nav {
+	padding-left: 20px
+}
+.navbar-static-top {
+	z-index: 2000
+}
+.logobg {
+	background-image: url(../images/logo-bg.png);
+	background-repeat: no-repeat;
+	height: 108px;
+	width: 225px;
+	padding-left: 20px;
+	padding-top: 10px;
+	float: left;
+	margin-top: -12px;
+z-index:2500 important!
+}
+@media only screen and (max-width:767px) {
+.logobg {
+	display: none
+}
+.navbar-inverse navbar-nav li a {
+	background-color: 080808;
+	border-color: 080808
+}
+}
+@media only screen and (min-width:480px) {
+.navbar-inverse nav navbar-nav ul li {
+	background-color: #080808;
+	border-color: #080808
+}
+}
+@media only screen and (min-width:992px) {
+.logobg {
+	background-image: url(../images/logo-bg.png);
+	background-repeat: no-repeat;
+	float: right;
+	height: 108px;
+	width: 225px;
+z-index:2500 important!
+}
+}
+@media only screen and (min-width:1200px) {
+.logobg {
+	background-image: url(../images/logo-bg.png);
+	background-repeat: no-repeat;
+	float: right;
+	height: 108px;
+	width: 225px;
+z-index:2500 important!
+}
+}
+footer {
+	margin-right: -20px;
+	margin-left: -20px;
+	padding: 10px;
+	color: #ccc;
+	padding-bottom: 60px;
+	border-top: 4px #1c449c solid;
+	box-shadow: inset 0 7px 3px -3px rgba(50,50,50,.75);
+	background-color:#000;
+}
+footer .foot p {
+	font-family: Arial
+}
+footer .grade {
+	background: linear-gradient(to bottom, #343434 0, #fff 100%) repeat scroll 0 0 rgba(0,0,0,0);
+	height: 20px;
+	margin-top: 30px;
+	padding-top: 40px;
+	width: 100%;
+	padding: 0
+}
+footer #facebook {
+	background: url(../images/social-icon-facebook.png) repeat scroll 0 0 rgba(0,0,0,0);
+	height: 28px;
+	width: 27px
+}
+footer #facebook:hover {
+	background: url(../images/social-icon-facebook.png) repeat scroll 0 0 rgba(0,0,0,0)
+}
+footer #twitter {
+	background: url(../images/social-icon-twitter.png) repeat scroll 0 0 rgba(0,0,0,0);
+	height: 28px;
+	width: 27px
+}
+footer #twitter:hover {
+	background: url(../images/social-icon-twitter.png) repeat scroll 0 0 rgba(0,0,0,0)
+}
+footer #linkedin {
+	background: url(../images/social-icon-linkedin.png) repeat scroll 0 0 rgba(0,0,0,0);
+	height: 28px;
+	width: 27px
+}
+footer #linkedin:hover {
+	background: url(../images/social-icon-linkedin.png) repeat scroll 0 0 rgba(0,0,0,0)
+}
+footer #youtube:hover {
+	background: url(../images/youtube.png) repeat scroll 0 0 rgba(0,0,0,0)
+}
+footer #youtube {
+	background: url(../images/youtube.png) repeat scroll 0 0 rgba(0,0,0,0);
+	height: 28px;
+	width: 27px
+}
+footer #instagram:hover {
+	background: url(../images/instagram-icon.png) repeat scroll 0 0 rgba(0,0,0,0)
+}
+footer #instagram {
+	background: url(../images/instagram-icon.png) repeat scroll 0 0 rgba(0,0,0,0);
+	height: 28px;
+	width: 27px
+}
+footer .more h6 {
+	color: #2398b1;
+	font-family: ProximaNova-Regular;
+	font-weight: 400;
+	padding-bottom: 10px
+}
+footer .inline-list {
+	margin: 20px 0 0
+}
+footer .inline-list a {
+	color: #a2a09d;
+	font-family: ProximaNova-Regular
+}
+footer .inline-list a:hover {
+	color: #37c7e1
+}
+footer button {
+	float: right
+}
+.inline-list {
+	list-style: none outside none;
+	margin: 0 0 1.0625em -1.375em;
+	overflow: hidden;
+	padding: 0
+}
+.membership {
+	text-align: center
+}
+.blue {
+	color: #233d99;
+	font-weight: 700
+}
+.sb {
+	background-color: transparent!important
+}
+.required {
+	content: "*";
+	color: red
+}
+.row-centered {
+	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Helvetica, Arial, sans-serif;
+}
+.col-centered {
+	display: inline-block;
+	float: none;
+	text-align: left;
+	margin-right: -4px
+}
+.item {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #cecece;
+	padding: 16px 8px;
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #ededed));
+	background: -moz-linear-gradient(top, #f4f4f4 0, #ededed 100%);
+	background: -ms-linear-gradient(top, #f4f4f4 0, #ededed 100%)
+}
+.moduletable:after {
+	clear: both;
+	content: "";
+	display: block
+}
+social {
+	margin: 33px 20px 24px;
+	text-align: center
+}
+.social li {
+	display: inline;
+	list-style: none outside none;
+	margin: 0 10px
+}
+.social li a {
+	color: #acacac;
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+	transition: all .5s ease 0s
+}
+.social li a.fa {
+	position: relative
+}
+.social li a.fa:before {
+	font: 22px/24px FontAwesome
+}
+.social li a:hover {
+	color: #cf0000
+}
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	border: solid 1px #cbcbcb;
+	background-color: #FFF;
+	box-shadow: 0 2px 20px #cbcbcb;
+	-moz-box-shadow: 0 2px 20px #cbcbcb;
+	-webkit-box-shadow: 0 2px 20px #cbcbcb;
+	padding: 20px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	padding-top: 12px;
+	padding-bottom: 40px
+}
+.tablesorter-bootstrap {
+	width: 100%
+}
+.tablesorter-bootstrap thead th, .tablesorter-bootstrap thead td, .tablesorter-bootstrap tfoot th, .tablesorter-bootstrap tfoot td {
+	font: 700 14px/20px Arial, Sans-serif;
+	padding: 4px;
+	margin: 0 0 18px;
+	background-color: #eee
+}
+.tablesorter-bootstrap .tablesorter-header {
+	cursor: pointer
+}
+.tablesorter-bootstrap .tablesorter-header-inner {
+	position: relative;
+	padding: 4px 18px 4px 4px
+}
+.tablesorter-bootstrap .tablesorter-header i {
+	font-size: 11px;
+	position: absolute;
+	right: 2px;
+	top: 50%;
+	margin-top: -7px;
+	width: 14px;
+	height: 14px;
+	background-repeat: no-repeat;
+	line-height: 14px;
+	display: inline-block
+}
+.tablesorter-bootstrap .bootstrap-icon-unsorted {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAMAAADOvxanAAAAVFBMVEUAAABCQkJZWVkZGRnJyckgICAZGRkZGRn8/PweHh4dHR0aGhoaGhpUVFQbGxvQ0NDc3NxMTExSUlIbGxvr6+s4ODhKSkogICAtLS00NDQzMzMnJydSEPrQAAAAGHRSTlMA1ssZRLgdAQbDyisqsZo8QdXUq0r9xPepSRwiAAAAX0lEQVQI13XHSQKAIAwEwQAKxn13Ev7/T2Pu9qmarJKPXIicI4PH4hxaKNrhm2S8bJK5h4YzKHrzJNtK6yYT/TdXzpS5zuYg4MSQYF6i4IHExdw1UVRi05HPrrvT53a+qyMFC9t04gcAAAAASUVORK5CYII=)
+}
+.tablesorter-bootstrap .icon-white.bootstrap-icon-unsorted {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOBAMAAAALT/umAAAAKlBMVEUAAAD///////////////////////////////////////////////////+Gu8ovAAAADXRSTlMA4EXKBtQqvR0+sxmalc142gAAAFdJREFUCNdjYGDoamAAAjZbMxCVfvd6AgMDd+3du9UMDKx3hWSvMjBwXZww8RYDGuC53NB8h4GB8a617UUGBs7Yu3cjGRhYVO9eVQFKOskKOQApFmUgBwBZ+xXRTttNdAAAAABJRU5ErkJggg==)
+}
+.tablesorter-bootstrap>tbody>tr.odd>td, .tablesorter-bootstrap>tbody>tr.tablesorter-hasChildRow.odd:hover~tr.tablesorter-hasChildRow.odd~.tablesorter-childRow.odd>td {
+	background-color: #f9f9f9
+}
+.tablesorter-bootstrap>tbody>tr.odd:hover>td, .tablesorter-bootstrap>tbody>tr.even:hover>td, .tablesorter-bootstrap>tbody>tr.tablesorter-hasChildRow.odd:hover~.tablesorter-childRow.odd>td, .tablesorter-bootstrap>tbody>tr.tablesorter-hasChildRow.even:hover~.tablesorter-childRow.even>td {
+	background-color: #f5f5f5
+}
+.tablesorter-bootstrap>tbody>tr.even>td, .tablesorter-bootstrap>tbody>tr.tablesorter-hasChildRow.even:hover~tr.tablesorter-hasChildRow.even~.tablesorter-childRow.even>td {
+	background-color: #fff
+}
+.tablesorter-bootstrap .tablesorter-processing {
+	background-image: url(data:image/gif;base64,R0lGODlhFAAUAKEAAO7u7lpaWgAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQBCgACACwAAAAAFAAUAAACQZRvoIDtu1wLQUAlqKTVxqwhXIiBnDg6Y4eyx4lKW5XK7wrLeK3vbq8J2W4T4e1nMhpWrZCTt3xKZ8kgsggdJmUFACH5BAEKAAIALAcAAAALAAcAAAIUVB6ii7jajgCAuUmtovxtXnmdUAAAIfkEAQoAAgAsDQACAAcACwAAAhRUIpmHy/3gUVQAQO9NetuugCFWAAAh+QQBCgACACwNAAcABwALAAACE5QVcZjKbVo6ck2AF95m5/6BSwEAIfkEAQoAAgAsBwANAAsABwAAAhOUH3kr6QaAcSrGWe1VQl+mMUIBACH5BAEKAAIALAIADQALAAcAAAIUlICmh7ncTAgqijkruDiv7n2YUAAAIfkEAQoAAgAsAAAHAAcACwAAAhQUIGmHyedehIoqFXLKfPOAaZdWAAAh+QQFCgACACwAAAIABwALAAACFJQFcJiXb15zLYRl7cla8OtlGGgUADs=);
+	background-position: center center!important;
+	background-repeat: no-repeat!important
+}
+.caption {
+	background: #fff
+}
+.tablesorter-bootstrap .tablesorter-filter-row .tablesorter-filter {
+	width: 98%;
+	margin: 0 auto;
+	padding: 4px 6px;
+	color: #333;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: height .1s ease;
+	-moz-transition: height .1s ease;
+	-o-transition: height .1s ease;
+	transition: height .1s ease
+}
+.tablesorter-bootstrap .tablesorter-filter-row .tablesorter-filter.disabled {
+	background-color: #eee;
+	color: #555;
+	cursor: not-allowed;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.075) inset;
+	box-sizing: border-box;
+	transition: height .1s ease
+}
+.tablesorter-bootstrap .tablesorter-filter-row td {
+	background: #efefef;
+	line-height: normal;
+	text-align: center;
+	padding: 4px 6px;
+	vertical-align: middle;
+	-webkit-transition: line-height .1s ease;
+	-moz-transition: line-height .1s ease;
+	-o-transition: line-height .1s ease;
+	transition: line-height .1s ease
+}
+.tablesorter-bootstrap .tablesorter-filter-row.hideme td {
+	padding: 2px;
+	margin: 0;
+	line-height: 0
+}
+.tablesorter-bootstrap .tablesorter-filter-row.hideme .tablesorter-filter {
+	height: 1px;
+	min-height: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	opacity: 0;
+	filter: alpha(opacity=0)
+}
+.tablesorter .filtered {
+	display: none
+}
+.tablesorter-bootstrap .tablesorter-pager select {
+	padding: 4px 6px
+}
+.tablesorter-bootstrap .tablesorter-pager .pagedisplay {
+	border: 0
+}
+.tablesorter-bootstrap tfoot i {
+	font-size: 11px
+}
+.tablesorter .tablesorter-errorRow td {
+	text-align: center;
+	cursor: pointer;
+	background-color: #e6bf99
+}
+// // Modals // --------------------------------------------------  // .modal-open - body class for killing the scroll // .modal - container to scroll within // .modal-dialog - positioning shell for the actual modal // .modal-content - actual modal w/ bg and corners and shit  // Kill the scroll on the body .modal-open {
+ overflow: hidden;
+}
+ // Container that the modal scrolls within .btn {
+ font-size: 14px;
+}
+.btn-primary {
+	font-size: 14px !important;
+}
+.modal {
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+ z-index: @zindex-modal;
+	-webkit-overflow-scrolling: touch;
+ // Prevent Chrome on Windows from adding a focus outline. For details, see  // https://github.com/twbs/bootstrap/pull/10951.  outline: 0;
+ // When fading in the modal, animate it to slide down  &.fade .modal-dialog {
+ .translate3d(0, -25%, 0);
+ .transition-transform(~"0.3s ease-out");
+}
+ &.in .modal-dialog {
+.translate3d(0, 0, 0)
+}
+}
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+ // Shell div to position the modal with bottom padding .modal-dialog {
+ position: relative;
+ width: auto;
+ margin: 10px;
+}
+ // Actual modal .modal-content {
+ position: relative;
+ background-color: @modal-content-bg;
+ border: 1px solid @modal-content-fallback-border-color;
+//old browsers fallback (ie8 etc)  border: 1px solid @modal-content-border-color;
+ border-radius: @border-radius-large;
+ .box-shadow(0 3px 9px rgba(0,0,0,.5));
+ background-clip: padding-box;
+ // Remove focus outline from opened modal  outline: 0;
+ width: 30%;
+ margin: 0 auto;
+}
+ // Modal background .modal-backdrop {
+ position: fixed;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ z-index: @zindex-modal-background;
+ background-color: @modal-backdrop-bg;
+ // Fade for backdrop  &.fade {
+.opacity(0);
+}
+ &.in {
+.opacity(@modal-backdrop-opacity);
+}
+}
+ // Modal header // Top section of the modal w/ title and dismiss .modal-header {
+ padding: @modal-title-padding;
+ border-bottom: 1px solid @modal-header-border-color;
+ min-height: (@modal-title-padding + @modal-title-line-height);
+}
+// Close icon .modal-header .close {
+ margin-top: -2px;
+}
+ // Title text within header .modal-title {
+ margin: 0;
+ line-height: @modal-title-line-height;
+}
+ // Modal body // Where all modal content resides (sibling of .modal-header and .modal-footer) .modal-body {
+ position: relative;
+ padding: @modal-inner-padding;
+}
+ // Footer (for actions) .modal-footer {
+ padding: @modal-inner-padding;
+ text-align: right;
+// right align buttons  border-top: 1px solid @modal-footer-border-color;
+ &:extend(.clearfix all);
+// clear it in case folks use .pull-* classes on buttons  // Properly space out buttons  .btn + .btn {
+ margin-left: 5px;
+ margin-bottom: 0;
+// account for input[type="submit"] which gets the bottom margin like all other inputs
+}
+ // but override that for button groups  .btn-group .btn + .btn {
+ margin-left: -1px;
+}
+ // and override it for block buttons as well  .btn-block + .btn-block {
+ margin-left: 0;
+}
+}
+ // Measure scrollbar width for padding body during modal show/hide .modal-scrollbar-measure {
+ position: absolute;
+ top: -9999px;
+ width: 50px;
+ height: 50px;
+ overflow: scroll;
+}
+ // Scale up the modal @media (min-width: @screen-sm-min) {
+ // Automatically set modal's width for larger viewports  .modal-dialog {
+ width: @modal-md;
+ margin: 30px auto;
+}
+ .modal-content {
+ .box-shadow(0 5px 15px rgba(0,0,0,.5));
+}
+ // Modal sizes  .modal-sm {
+width: @modal-sm;
+}
+}
+ @media (min-width: @screen-md-min) {
+ .modal-lg {
+width: @modal-lg;
+}
+}
+@media only screen and (min-width: 1200px) {
+.modal-content {
+	width: 30%;
+	margin-left: 30%;
+}
+}
+@media only screen and (min-width: 992px) {
+.modal-content {
+	width: 30%;
+	margin-left: 30%;
+}
+}
+@media only screen and (min-width: 768px) {
+.modal-content {
+	width: 35%;
+	margin-left: 30%;
+}
+}
+
