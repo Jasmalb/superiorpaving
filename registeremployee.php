@@ -1,10 +1,43 @@
 <?php
 include("db.php");
+require_once("./helperfunctions.php");
+
 session_start();
+
+$errors = array(); 
+
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
+	$user_id = isset($_POST['user_id']) ? $_POST['user_id'] : null;
+    $password = isset($_POST['password']) ? $_POST['password'] : null;
+    $passwordd = isset($_POST['passwordd']) ? $_POST['passwordd'] : null;
 	
+	if(strlen(trim($user_id)) === 0){
+        //username validation
+        $errors[] = "You must enter a User ID!";
+    }
+	
+	if(strlen(trim($password)) === 0){
+        //password validation
+        $errors[] = "You must enter a password!";
+    }
+
+	if(strlen(trim($passwordd)) === 0){
+        //confirm password validation
+        $errors[] = "You must repeat your password to confirm!";
+    }
+	
+if($password != $passwordd)
+{
+	//validation to see if the passwords are the same
+    $errors[] = "The password and repeat password fields must match!";
+}
+
 include 'db.php';
+
+if(empty($errors)){
+
 
 $iv = mcrypt_create_iv(16, MCRYPT_DEV_URANDOM);
 var_dump($iv);
@@ -50,7 +83,7 @@ if (!sqlsrv_query($db, $query, $params))
 } else {
 	header("location: adminpage.php");
 }
-
+}
 }
 
 function stringHashing($password,$salt){
@@ -140,7 +173,14 @@ function stringHashing($password,$salt){
 
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
-<div class='short_explanation'>* required fields</div>
+<div class='short_explanation'><?php 
+if(!empty($errors)){ 
+    echo '<h1>Error(s)!</h1>';
+    foreach($errors as $errorMessage){
+        echo $errorMessage . '<br>';
+    }
+} 
+?><p>* required fields</p></div>
 
 <div><span class='error'></span></div>
 
@@ -244,6 +284,15 @@ function stringHashing($password,$salt){
     </div>
 </div>
 
+<div class='form-group'>
+    <label class='col-sm-5 control-label' for='passwordd' >Repeat Password*:</label>
+    <div class='col-sm-7'>
+    <div class='pwdwidgetdiv' id='thepwddiv' ></div>
+    <input class='form-control' type='passwordd' name='passwordd' id='passwordd' maxlength="50" />
+    <div id='register_password_errorloc' class='error' style='clear:both'></div>
+    </div>
+</div>
+
 <div class='modal-footer'> <a href='index.php'>
             <button type='button' class='btn btn-default'>Close</button>
             </a>
@@ -258,7 +307,7 @@ function stringHashing($password,$salt){
 
 
 <!-- client-side Form Validations:
-Uses the excellent form validation script from JavaScript-coder.com
+Uses the excellent form validation script from JavaScript-coder.com -->
 
 <script type='text/javascript'>
 // <![CDATA[
@@ -290,7 +339,7 @@ Uses the excellent form validation script from JavaScript-coder.com
     
     frmvalidator.addValidation("password","req","Please provide a password");
 
-// ]]>
+ ]]>
 </script> 
 -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
