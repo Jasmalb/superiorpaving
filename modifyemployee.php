@@ -105,13 +105,13 @@ $query = "UPDATE [BrewPoint].[dbo].[tblUsers]
            , Region_ID = ?
            , LastPlantSet = ?
            , EmailPassword = ?
-		   , PasswordHash = CONVERT(varbinary(MAX),?)
+		   , PasswordHash = CONVERT(varbinary(MAX),HASHBYTES(?, ? + ?))
 		   , Salt = ?
 		   WHERE ID = ?";
 		   
 
 $stmt = sqlsrv_prepare($db, $query, array( &$user_id, &$lastcompany, &$firstname, &$lastname, &$emailaddress, 
-	&$phonenumber, &$company_id, &$lastforemanset, &$region_id, &$lastplantset, &$emailpassword, &$hashpass, $iv, &$id));
+	&$phonenumber, &$company_id, &$lastforemanset, &$region_id, &$lastplantset, &$emailpassword, 'SHA2_512', $password, $iv, $iv, &$id));
 		   
 if( !sqlsrv_execute( $stmt ) ) {
 	die( print_r( sqlsrv_errors(), true) );
@@ -321,7 +321,7 @@ if(!empty($errors)){
     </div>
 </div>
 
-<div class='modal-footer'> <a href='index.php'>
+<div class='modal-footer'> <a href='adminpage.php'>
             <button type='button' class='btn btn-default'>Close</button>
             </a>
     <input type='submit' name='Submit' value='Submit' class='btn btn-primary'/>

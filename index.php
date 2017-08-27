@@ -1,9 +1,10 @@
 <?php
 include("db.php");
-session_start();
+//require_once('authenticate.php');
+
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	
 function stringHashing($password,$salt){
  $hashedString=$password.$salt;
  for ($i=0; $i<50; $i++){
@@ -12,29 +13,45 @@ function stringHashing($password,$salt){
  return $hashedString;
 } 
 
+
 // username and password sent from Form
 $username=$_POST['username']; 
 $password=$_POST['password']; 
+$salt = null;
 
 $query = "SELECT * FROM [BrewPoint].[dbo].[tblUsers] WHERE User_ID='{$username}'";
 
 $result = sqlsrv_query($db, $query);
 
 if($row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)) {
-	$retrievedHash = stringHashing($password, $row["Salt"]);
+	$salt=$row["Salt"];
 }
 //$count=sqlsrv_num_rows($result);
 
+$query2 = "SELECT * FROM [BrewPoint].[dbo].[tblUsers] WHERE PasswordHash=HASHBYTES(?, ? + ?)";
+$params = array('SHA2_512', $password, $salt); 
+$result2 = sqlsrv_query($db, $query2, $params);
+
+if($row2 = sqlsrv_fetch_array( $result2, SQLSRV_FETCH_ASSOC)) {
+	$retrievedHash = "valid";
+} else {
+	$retrievedHash = "invalid";
+}
+
 if($result === false){
-     die( print_r( sqlsrv_errors(), true));
+    die( print_r( sqlsrv_errors(), true));
 }
 
 
 // If result matched $username and $password, table row must be 1 row
-if($retrievedHash != $row["PasswordHash"]){
-       echo "User/password not found";
-}else{
-header("location: adminpage.php");
+if($retrievedHash === "invalid"){
+		echo "User/password not found";      
+} else
+{
+	session_start();
+	$_SESSION["authenticated"] = 'true';
+header("location: dashboard.php");
+exit;
 }
 }
 ?>
@@ -115,7 +132,15 @@ header("location: adminpage.php");
 </div>
 </div>
 <input type='hidden' name='CSRFtoken' value='135c6b2ebca27bfccd94498ffd8c62e7d712e9c6c17ef58d2e433ede28a042fdb0d85665f3171b83df0a045a881e9a0925665e4526d0b9bc9bf909f75454503d' />
-
+<?php 
+if (isset($retrievedHash)) {
+	if ($retrievedHash == 'invalid') {
+		echo "Username and Password combination ";
+	} else {
+	}	
+} else {
+}
+?>
 <div class='modal-footer'>
     <input type='submit' name='Submit' value='Submit' class='btn btn-success' />
 </div>

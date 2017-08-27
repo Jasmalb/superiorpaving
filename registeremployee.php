@@ -71,10 +71,10 @@ $query = "INSERT INTO [BrewPoint].[dbo].[tblUsers]
            ,EmailPassword
            ,PasswordHash
            ,Salt) VALUES
-		   (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, CONVERT(varbinary(MAX),?), ?)";
+		   (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, CONVERT(varbinary(MAX),HASHBYTES(?, ? + ?)), ?)";
 		   
 $params = array($user_id, $lastcompany, $firstname, $lastname, $emailaddress, $phonenumber, 
-		$company_id, $lastforemanset, $region_id, $lastplantset, $emailpassword, $hashpass, $iv); 
+		$company_id, $lastforemanset, $region_id, $lastplantset, $emailpassword, 'SHA2_512', $password, $iv, $iv); 
 		   
 
 if (!sqlsrv_query($db, $query, $params))
@@ -145,9 +145,8 @@ function stringHashing($password,$salt){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-inverse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-             <li class="active"><a href="index.php">Home</a></li>
+             <li class="active"><a href="adminpage.php">Home</a></li>
 			<li><a href="registeremployee.php">Register Employee</a></li>
-			<li><a href="modifyemployee.php">Modify Employee</a></li>
 			<li><a href="logout.php">logout</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -293,7 +292,7 @@ if(!empty($errors)){
     </div>
 </div>
 
-<div class='modal-footer'> <a href='index.php'>
+<div class='modal-footer'> <a href='adminpage.php'>
             <button type='button' class='btn btn-default'>Close</button>
             </a>
     <input type='submit' name='Submit' value='Submit' class='btn btn-primary'/>

@@ -1,3 +1,47 @@
+<?php
+//require_once('authenticate.php');
+include("db.php");
+session_start();
+
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+	
+function stringHashing($password,$salt){
+ $hashedString=$password.$salt;
+ for ($i=0; $i<50; $i++){
+  $hashedString=hash('sha512',$password.$hashedString.$salt);
+  }
+ return $hashedString;
+} 
+
+// username and password sent from Form
+$username=$_POST['username']; 
+$password=$_POST['password']; 
+
+$query = "SELECT * FROM [BrewPoint].[dbo].[tblUsers] WHERE User_ID='{$username}'";
+
+$result = sqlsrv_query($db, $query);
+
+if($row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)) {
+	$retrievedHash = stringHashing($password, $row["Salt"]);
+}
+//$count=sqlsrv_num_rows($result);
+
+if($result === false){
+     die( print_r( sqlsrv_errors(), true));
+}
+
+
+// If result matched $username and $password, table row must be 1 row
+if($retrievedHash != $row["PasswordHash"]){
+       echo "User/password not found";
+}else{
+header("location: adminpage.php");
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- InstanceBegin template="/Templates/mainpage.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -6,7 +50,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Untitled Document</title>
+<title>Superior Paving</title>
 <!-- InstanceEndEditable -->
 <!-- Bootstrap -->
 <link rel="stylesheet" href="css/bootstrap.css">
@@ -33,7 +77,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-inverse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        
+                   <li class="active"><a href="dashboard.php">Home</a></li>
+			<li><a href="adminpage.php">Admin</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       </ul>
@@ -51,37 +96,7 @@
           <div class="inner cover">
           <div class="well">
             <div id='fg_membersite'>
-<form class='form-horizontal' id='login' action='/superiorpaving/login.php' method='post' accept-charset='UTF-8'>
-<fieldset >
-<legend>Login</legend>
-
-<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-<div class='short_explanation'>* required fields</div>
-
-<div><span class='error'></span></div>
-<div class='form-group'>
-    <label class='col-sm-5 control-label' for='username' >UserName*:</label>
-    <div class='col-sm-7'>
-    <input class='form-control' type='text' name='username' id='username' value='' maxlength="50" />
-    <span id='login_username_errorloc' class='error'></span>
-</div>
-</div>
-<div class='form-group'>
-    <label class='col-sm-5 control-label' for='password' >Password*:</label>
-    <div class='col-sm-7'>
-    <input class='form-control' type='password' name='password' id='password' maxlength="50" />
-    <span id='login_password_errorloc' class='error'></span>
-</div>
-</div>
-<input type='hidden' name='CSRFtoken' value='135c6b2ebca27bfccd94498ffd8c62e7d712e9c6c17ef58d2e433ede28a042fdb0d85665f3171b83df0a045a881e9a0925665e4526d0b9bc9bf909f75454503d' />
-
-<div class='modal-footer'>
-    <input type='submit' name='Submit' value='Submit' class='btn btn-success' />
-</div>
-<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-</fieldset>
-</form>
+<h2>Dashboard</h2>
 </div>
 <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
