@@ -15,6 +15,12 @@ html {
     margin-left: auto;
 
 }
+.bg {
+background-image:url(../images/SliderBG1.jpg);
+margin-top:-20px;
+background-repeat:no-repeat;
+background-color: #01683d;
+}
 .site-wrapper-inner {
 	vertical-align: middle;
 	vertical-align: top;
