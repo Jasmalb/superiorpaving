@@ -89,18 +89,20 @@ exit;
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-inverse" id="bs-example-navbar-collapse-1">
+    <!-- InstanceBeginEditable name="nav" -->
       <ul class="nav navbar-nav">
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
       </ul>
+      <!-- InstanceEndEditable -->
     </div>
     <!-- /.navbar-collapse --> 
   </div>
   <!-- /.container-fluid --> 
 </nav>
 <!-- InstanceBeginEditable name="mainSection" -->
-<div class="container-fluid" style="background-image:url(images/SliderBG1.jpg);margin-top:-20px">
+<div class="container-fluid bg">
 <div class="row">
 <div class="col-xs-push-4 col-sm-4 col-xs-pull-4">
       <div class="site-wrapper-inner">
@@ -178,9 +180,11 @@ Uses the excellent form validation script from JavaScript-coder.com-->
     </div>
   </div>
 </footer>
+<!-- InstanceBeginEditable name="script" -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="js/jquery-1.11.3.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script>
+<!-- InstanceEndEditable -->
 </body>
 <!-- InstanceEnd --></html>

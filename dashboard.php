@@ -76,29 +76,66 @@ header("location: adminpage.php");
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-inverse" id="bs-example-navbar-collapse-1">
+    <!-- InstanceBeginEditable name="nav" -->
       <ul class="nav navbar-nav">
-                   <li class="active"><a href="dashboard.php">Home</a></li>
-			<li><a href="adminpage.php">Admin</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+			<li><a href="https://brewpoint.superiorpaving.net/dailyplantreports.php">Daily Plant Reports</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       </ul>
+      <!-- InstanceEndEditable -->
     </div>
     <!-- /.navbar-collapse --> 
   </div>
   <!-- /.container-fluid --> 
 </nav>
 <!-- InstanceBeginEditable name="mainSection" -->
-<div class="container-fluid" style="background-image:url(images/SliderBG1.jpg);margin-top:-20px">
+<div class="container-fluid bg">
 <div class="row">
-<div class="col-xs-push-4 col-sm-4 col-xs-pull-4">
+<div class="col-xs-push-2 col-sm-8 col-xs-pull-2">
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="inner cover">
-          <div class="well">
-            <div id='fg_membersite'>
-<h2>Dashboard</h2>
+              <div class="well">
+          <div class="col-sm-12">
+                <img src="images/banner.jpg" width="100%" height="auto" alt="banner"> 
+                <h4 align="center"><label>Company ID</label><select name="Company ID"></select></h4>
+          </div>
+                <div class="col-sm-4">
+                  <a href="#" class="titlelbl"><img src="images/ticketprocesses.jpg" width="59" height="57" alt="Ticket Processing"> Asphalt Ticketing Processing</a>
+                  <a href="#" class="titlelbl"><img src="images/fob.jpg" width="60" height="57" alt="Customer FOB orders"> Customer (FOB) Orders</a>
+                  <a href="#" class="titlelbl"><img src="images/dailyforeman.jpg" width="60" height="60" alt="daily forman progress"> Daily Foreman Progress</a> 
+                  <a href="#" class="titlelbl"><img src="images/dailyjob.jpg" width="58" height="59" alt="Daily job sheets"> Daily Job Sheets</a>
+                  <a href="dailyplantreports.php" class="titlelbl"><img src="images/dailyplant.jpg" width="57" height="60" alt="daily plant reports"> Daily Plant Reports</a>
+                  <a href="#" class="titlelbl"><img src="images/daily-density.jpg" width="59" height="56" alt="densitytechnicanreports"> Density Technican Reports</a>
+                  <a href="#" class="titlelbl"><img src="images/haultime.jpg" width="60" height="59" alt="haultime Dispatch">HaulTime Dispatch</a>
+                </div>
+                  <div class="col-sm-4">
+                 <a href="#" class="titlelbl"><img src="images/haultiminsp.jpg" width="61" height="59" alt="haultime insp"> HaulTime Insp. Rpts</a>
+                 <a href="#" class="titlelbl"><img src="images/jobstreeplanner.jpg" width="60" height="57" alt="Customer FOB orders"> Job Sheet Planner</a>
+                 <a href="#" class="titlelbl"><img src="images/longhaultimestatus.jpg" width="60" height="60" alt="daily forman progress"> LowHaulTime Dispatch</a>
+                 <a href="#" class="titlelbl"><img src="images/lowhaultimestatus.jpg" width="58" height="59" alt="Daily job sheets"> LowHaulTime Status</a>
+                 <a href="#" class="titlelbl"><img src="images/maintainanceposting.jpg" width="57" height="60" alt="daily plant reports"> Maintenance Posting</a>
+                 <a href="#" class="titlelbl"><img src="images/orderstatus.jpg" width="59" height="56" alt="density technican reports"> Order Status</a>
+                 <a href="#" class="titlelbl"><img src="images/process-job.jpg" width="60" height="59" alt="haultime Dispatch"> Process Job</a>
+                 </div>
+                <div class="col-sm-4">
+                 <a href="#" class="titlelbl"><img src="images/purchaseorder.jpg" width="59" height="57" alt="Ticket Processing"> Purchase Orders</a>
+                 <a href="#" class="titlelbl"><img src="images/reports.jpg" width="60" height="57" alt="Customer FOB orders"> Reports</a>
+                 <a href="#" class="titlelbl"><img src="images/safetychecklist.jpg" width="60" height="60" alt="daily forman progress"> Safety Checklist</a>
+                 <a href="#" class="titlelbl"><img src="images/scoreboard.jpg" width="58" height="59" alt="Daily job sheets"> Scoreboard</a>
+                 <a href="#" class="titlelbl"><img src="images/setup.jpg" width="57" height="60" alt="daily plant reports"> Setup</a>
+                 <a href="#" class="titlelbl"><img src="images/ticketsearch.jpg" width="59" height="56" alt="density technican reports"> Ticket Search</a>
+                 <a href="#" class="titlelbl"><img src="images/weightmaster.jpg" width="60" height="59" alt="haultime Dispatch"> Weighmaster Summary</a>
+                </div>
+       </div>
+    </div>
 </div>
-<!-- client-side Form Validations:
+</div>
+</div>
+</div>
+</div>
+          <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
 
 <script type='text/javascript'>
@@ -114,10 +151,6 @@ Uses the excellent form validation script from JavaScript-coder.com-->
 
 // ]]>
 </script>
-</div>
-          </div>
-          </div></div>
-          </div></div></div>
 <!-- InstanceEndEditable -->
 <footer class="text-center footer">
   <div class="container">
@@ -128,9 +161,11 @@ Uses the excellent form validation script from JavaScript-coder.com-->
     </div>
   </div>
 </footer>
+<!-- InstanceBeginEditable name="script" -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="js/jquery-1.11.3.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script>
+<!-- InstanceEndEditable -->
 </body>
 <!-- InstanceEnd --></html>

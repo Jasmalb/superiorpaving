@@ -32,11 +32,13 @@
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-inverse" id="bs-example-navbar-collapse-1">
+    <!-- TemplateBeginEditable name="nav" -->
       <ul class="nav navbar-nav">
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
       </ul>
+      <!-- TemplateEndEditable -->
     </div>
     <!-- /.navbar-collapse --> 
   </div>
@@ -67,9 +69,11 @@
     </div>
   </div>
 </footer>
+<!-- TemplateBeginEditable name="script" -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="../js/jquery-1.11.3.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="../js/bootstrap.js"></script>
+<!-- TemplateEndEditable -->
 </body>
 </html>
