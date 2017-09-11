@@ -1,3 +1,20 @@
+<?php
+include("db.php");
+session_start();
+
+
+function checkforrecord()
+{
+	$dateSelect=$_POST['dateselect']; 
+	$plantSelect=$_POST['plantselect'];
+	$shiftSelect=$_POST['shiftselect'];
+	echo "$dateSelect $plantSelect $shiftSelect";
+}
+
+if(array_key_exists('test',$_POST)){
+   checkforrecord();
+}
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- InstanceBegin template="/Templates/mainpage.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -67,12 +84,35 @@
           <div class="inner cover">
           <div class="col-sm-12 dailyplantrep">
           <div class="col-sm-3">
-               <p class="gold"><label>Go to Date:  </label><input type="text" id="datepicker"></p>
-               <p class="gold"><label>Plant:  </label><select name=""></select></p>        
-               <p class="gold"><label>Shift:  </label><select name=""></select></p>
+		  <form method="post">
+               <p class="gold"><label>Go to Date:  </label><input type="text" name="dateselect" value="01/01/2017" id="datepicker"></p>
+			   <p class="gold"><label>Plant:  </label>
+				<?php
+				$query = "SELECT * FROM [BrewPoint].[dbo].[tblDeliveryLocations]";
+				$result = sqlsrv_query($db, $query);
+				
+				if (sqlsrv_has_rows($result) > 0) {
+				// output data of each row
+				echo "<select name='plantselect'>";
+					while($row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)) {
+						
+						echo "<option value=" . $row["LocationDescription"]. ">" . $row["LocationName"]. "</option>";
+						
+						
+					}
+				echo "</select></p>";
+				}
+                  ?>     
+               <p class="gold"><label>Shift:  </label>
+			   <select name="shiftselect">
+			   <option value="Day">Day</option>
+			   <option value="Night">Night</option>
+			   </select></p>
           </div>
                <div class="col-sm-2">
-               <button class="bg-primary" onClick="">Go To Record</button>
+			   
+				<input type="submit" class="bg-primary" name="test" id="test" value="Go To Record" /><br/>
+				</form>
                </div>
                <div class="col-sm-7">
                </div>

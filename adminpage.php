@@ -1,15 +1,15 @@
 <?php
 include("db.php");
 session_start();
-if (isset($_SESSION["authenticated"])) {
-	if ($_SESSION["authenticated"] == 'true') {
-		echo "authenticated";
-	} else {
-		header("location: index.php");
-	}	
-} else {
-	header("location: index.php");
-}
+//if (isset($_SESSION["authenticated"])) {
+//	if ($_SESSION["authenticated"] == 'true') {
+//		echo "authenticated";
+//	} else {
+//		header("location: index.php");
+//	}	
+//} else {
+//	header("location: index.php");
+//}
 //if($_SESSION['logged_in'] != 'YES')
 //[
 //	header("Location: index.php");
